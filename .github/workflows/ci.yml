@@ -29,6 +29,7 @@ jobs:
         id: yarn-cache
         with:
           path: |
+            /home/runner/.cache/Cypress
             **/node_modules
           key: out-cache-yarn-${{ hashFiles('**/yarn.lock.json' )}}
 
