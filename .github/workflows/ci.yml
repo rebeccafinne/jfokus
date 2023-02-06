@@ -25,7 +25,7 @@ jobs:
 
       - name: Test
         run: yarn test:ci
-jobs:
+
   e2e-test:
     runs-on: ubuntu-latest
 
@@ -45,8 +45,10 @@ jobs:
 
       - name: e2e
         run: yarn e2e
-jobs:
   lint:
+    strategy:
+      matrix: 
+        command: [lint, "test:ci", e2e]
     runs-on: ubuntu-latest
 
     steps:
@@ -64,6 +66,6 @@ jobs:
         run: yarn install
 
       - name: Lint
-        run: yarn lint:ci
+        run: yarn ${{ matrix.command }}
 
 
