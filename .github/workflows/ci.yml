@@ -42,5 +42,10 @@ jobs:
 
       - name: Lint
         run: yarn ${{ matrix.command }}
+  echo:
+    uses: rebeccafinne/jfokus/.github/workflows/_echo.yml@test
+    with:
+      message: "Hej hej!"
+
 
 
