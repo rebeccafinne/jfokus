@@ -42,10 +42,18 @@ jobs:
 
       - name: Lint
         run: yarn ${{ matrix.command }}
+      
+      - uses: ./tools/action/
+        id: hello
+        with:
+          who-to-greet: 'Mona the Octocat'
   echo:
     uses: rebeccafinne/jfokus/.github/workflows/_echo.yml@test
     with:
       message: "Hej hej!"
+
+    
+
 
 
 
