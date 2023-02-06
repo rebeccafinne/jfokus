@@ -1,0 +1,17 @@
+name: ECHO
+
+on:
+  workflow_call:
+    inputs: 
+      message:
+        type: string
+        description: Message to tell the world
+        default: 'JFokus 2023'
+        required: false
+  
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo ${{ inputs.message }}
